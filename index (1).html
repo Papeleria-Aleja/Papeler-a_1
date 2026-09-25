@@ -1,0 +1,3738 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Papelería Aleja | Cositas hechas con cariño</title>
+
+<style>
+
+/* =====================================================
+   PAPELERÍA ALEJA
+   ESTILO CREATIVO + ARTESANAL + MODERNO
+===================================================== */
+
+:root{
+
+  --cream:#fffaf3;
+  --paper:#fffdf8;
+  --ink:#29252a;
+  --soft:#716b70;
+
+  --pink:#ff7fae;
+  --pink2:#ffb6cd;
+
+  --lavender:#a88cff;
+  --blue:#7fc8ff;
+
+  --yellow:#ffd86b;
+  --mint:#8ee5ca;
+
+  --border:rgba(41,37,42,.10);
+
+  --shadow:
+    0 20px 60px rgba(60,40,50,.10);
+
+  --radius:28px;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+
+  margin:0;
+  padding:0;
+
+  box-sizing:border-box;
+
+}
+
+
+html{
+
+  scroll-behavior:smooth;
+
+}
+
+
+body{
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  color:var(--ink);
+
+  background:
+
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255,127,174,.15),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(168,140,255,.13),
+      transparent 25%
+    ),
+
+    linear-gradient(
+      180deg,
+      #fffaf4,
+      #fffdf9
+    );
+
+  overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   FONDO DE PAPEL
+===================================================== */
+
+.paper-background{
+
+  position:fixed;
+
+  inset:0;
+
+  z-index:-10;
+
+  pointer-events:none;
+
+  overflow:hidden;
+
+}
+
+
+/* textura muy sutil */
+
+.paper-background::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  opacity:.22;
+
+  background-image:
+
+    radial-gradient(
+      rgba(41,37,42,.13) .7px,
+      transparent .7px
+    );
+
+  background-size:
+    18px 18px;
+
+}
+
+
+/* =====================================================
+   MANCHAS DE COLOR
+===================================================== */
+
+.blob{
+
+  position:absolute;
+
+  border-radius:50%;
+
+  filter:blur(55px);
+
+  opacity:.32;
+
+  animation:
+    blobMove 14s
+    ease-in-out
+    infinite alternate;
+
+}
+
+
+.blob-pink{
+
+  width:330px;
+  height:330px;
+
+  background:
+    var(--pink2);
+
+  top:-100px;
+  left:-100px;
+
+}
+
+
+.blob-purple{
+
+  width:380px;
+  height:380px;
+
+  background:
+    #d7cbff;
+
+  right:-140px;
+  top:20%;
+
+  animation-delay:3s;
+
+}
+
+
+.blob-yellow{
+
+  width:280px;
+  height:280px;
+
+  background:
+    #ffe9a2;
+
+  bottom:-100px;
+  left:20%;
+
+  animation-delay:5s;
+
+}
+
+
+.blob-blue{
+
+  width:300px;
+  height:300px;
+
+  background:
+    #b9e3ff;
+
+  bottom:5%;
+  right:10%;
+
+  animation-delay:7s;
+
+}
+
+
+@keyframes blobMove{
+
+  from{
+
+    transform:
+      translate(0,0)
+      scale(1);
+
+  }
+
+  to{
+
+    transform:
+      translate(70px,-40px)
+      scale(1.15);
+
+  }
+
+}
+
+
+/* =====================================================
+   MINI ESTRELLAS / CONFETI
+===================================================== */
+
+.confetti{
+
+  position:absolute;
+
+  inset:0;
+
+  opacity:.45;
+
+  background-image:
+
+    radial-gradient(
+      circle at 12% 30%,
+      var(--pink) 0 2px,
+      transparent 3px
+    ),
+
+    radial-gradient(
+      circle at 75% 15%,
+      var(--lavender) 0 2px,
+      transparent 3px
+    ),
+
+    radial-gradient(
+      circle at 40% 80%,
+      var(--yellow) 0 2px,
+      transparent 3px
+    ),
+
+    radial-gradient(
+      circle at 88% 70%,
+      var(--mint) 0 2px,
+      transparent 3px
+    );
+
+  animation:
+    confettiFloat 12s
+    ease-in-out
+    infinite alternate;
+
+}
+
+
+@keyframes confettiFloat{
+
+  to{
+
+    transform:
+      translateY(-35px)
+      rotate(2deg);
+
+  }
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav{
+
+  position:fixed;
+
+  top:18px;
+
+  left:50%;
+
+  transform:
+    translateX(-50%);
+
+  width:
+    min(1180px,92%);
+
+  height:70px;
+
+  padding:
+    0 20px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  background:
+    rgba(255,253,248,.82);
+
+  backdrop-filter:
+    blur(18px);
+
+  border:
+    1px solid
+    rgba(41,37,42,.09);
+
+  border-radius:
+    22px;
+
+  box-shadow:
+    0 12px 40px
+    rgba(70,45,55,.09);
+
+  z-index:1000;
+
+}
+
+
+.logo{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  text-decoration:none;
+
+  color:var(--ink);
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+  font-size:14px;
+
+}
+
+
+.logo-icon{
+
+  width:40px;
+  height:40px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:13px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--pink2),
+      var(--lavender)
+    );
+
+  font-size:20px;
+
+  box-shadow:
+
+    0 7px 20px
+    rgba(168,140,255,.22);
+
+  transition:.4s;
+
+}
+
+
+.logo:hover .logo-icon{
+
+  transform:
+    rotate(-8deg)
+    scale(1.1);
+
+}
+
+
+.nav-links{
+
+  display:flex;
+
+  gap:27px;
+
+}
+
+
+.nav-links a{
+
+  color:#6d666c;
+
+  text-decoration:none;
+
+  font-size:13px;
+
+  transition:.3s;
+
+}
+
+
+.nav-links a:hover{
+
+  color:
+    var(--pink);
+
+}
+
+
+.nav-button{
+
+  text-decoration:none;
+
+  color:white;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--lavender)
+    );
+
+  padding:
+    12px 17px;
+
+  border-radius:
+    13px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  box-shadow:
+
+    0 8px 20px
+    rgba(255,127,174,.22);
+
+  transition:.3s;
+
+}
+
+
+.nav-button:hover{
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+
+    0 12px 28px
+    rgba(255,127,174,.32);
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+  min-height:
+    100vh;
+
+  padding:
+    160px 6%
+    100px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+  position:relative;
+
+}
+
+
+.hero-content{
+
+  max-width:
+    950px;
+
+}
+
+
+.small-label{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  padding:
+    9px 15px;
+
+  background:
+    rgba(255,255,255,.65);
+
+  border:
+    1px solid
+    rgba(255,127,174,.20);
+
+  border-radius:
+    100px;
+
+  color:#756d72;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+  margin-bottom:27px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(60,40,50,.06);
+
+}
+
+
+.small-label span{
+
+  width:8px;
+  height:8px;
+
+  background:
+    var(--pink);
+
+  border-radius:50%;
+
+  box-shadow:
+    0 0 12px
+    rgba(255,127,174,.6);
+
+  animation:
+    labelPulse 1.7s infinite;
+
+}
+
+
+@keyframes labelPulse{
+
+  50%{
+
+    transform:
+      scale(1.5);
+
+  }
+
+}
+
+
+.hero h1{
+
+  font-size:
+    clamp(55px,9vw,110px);
+
+  line-height:.9;
+
+  letter-spacing:-6px;
+
+  margin-bottom:30px;
+
+}
+
+
+.hero h1 .line-one{
+
+  display:block;
+
+}
+
+
+.hero h1 .line-two{
+
+  display:block;
+
+  color:
+    var(--pink);
+
+  position:relative;
+
+}
+
+
+.hero h1 .line-two::after{
+
+  content:"";
+
+  position:absolute;
+
+  left:15%;
+
+  right:15%;
+
+  bottom:-10px;
+
+  height:10px;
+
+  border-radius:50%;
+
+  border-top:
+    3px solid
+    var(--yellow);
+
+  transform:
+    rotate(-2deg);
+
+}
+
+
+.hero-description{
+
+  max-width:
+    670px;
+
+  margin:auto;
+
+  color:
+    var(--soft);
+
+  font-size:17px;
+
+  line-height:1.8;
+
+}
+
+
+.hero-buttons{
+
+  margin-top:35px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:13px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  text-decoration:none;
+
+  padding:
+    15px 22px;
+
+  border-radius:
+    15px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  transition:.35s;
+
+}
+
+
+.btn-main{
+
+  color:white;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      var(--pink),
+      var(--lavender)
+    );
+
+  box-shadow:
+
+    0 12px 28px
+    rgba(255,127,174,.22);
+
+}
+
+
+.btn-secondary{
+
+  color:
+    var(--ink);
+
+  background:
+    rgba(255,255,255,.7);
+
+  border:
+    1px solid
+    var(--border);
+
+}
+
+
+.btn:hover{
+
+  transform:
+    translateY(-5px);
+
+}
+
+
+.btn-main:hover{
+
+  box-shadow:
+
+    0 18px 35px
+    rgba(255,127,174,.3);
+
+}
+
+
+.hero-info{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:15px;
+
+  margin-top:32px;
+
+  color:#8a8187;
+
+  font-size:12px;
+
+}
+
+
+.hero-info i{
+
+  width:5px;
+  height:5px;
+
+  background:
+    var(--pink);
+
+  border-radius:50%;
+
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+section{
+
+  padding:
+    110px 6%;
+
+  position:relative;
+
+}
+
+
+.section-head{
+
+  text-align:center;
+
+  max-width:
+    700px;
+
+  margin:
+    0 auto 50px;
+
+}
+
+
+.section-tag{
+
+  color:
+    var(--pink);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:3px;
+
+  margin-bottom:13px;
+
+}
+
+
+.section-head h2{
+
+  font-size:
+    clamp(38px,5vw,65px);
+
+  letter-spacing:-3px;
+
+  line-height:1;
+
+  margin-bottom:18px;
+
+}
+
+
+.section-head p{
+
+  color:
+    var(--soft);
+
+  line-height:1.7;
+
+}
+
+
+/* =====================================================
+   CATEGORÍAS
+===================================================== */
+
+.categories{
+
+  max-width:
+    1150px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:18px;
+
+}
+
+
+.category{
+
+  min-height:
+    210px;
+
+  padding:
+    27px;
+
+  background:
+    rgba(255,255,255,.70);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius);
+
+  box-shadow:
+    var(--shadow);
+
+  transition:.4s;
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.category::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:130px;
+  height:130px;
+
+  right:-60px;
+  bottom:-60px;
+
+  border-radius:50%;
+
+  background:
+    var(--pink2);
+
+  filter:blur(25px);
+
+  opacity:.5;
+
+}
+
+
+.category:hover{
+
+  transform:
+    translateY(-9px)
+    rotate(-1deg);
+
+  box-shadow:
+
+    0 25px 70px
+    rgba(60,40,50,.14);
+
+}
+
+
+.category-icon{
+
+  font-size:38px;
+
+  margin-bottom:22px;
+
+}
+
+
+.category h3{
+
+  margin-bottom:8px;
+
+  font-size:18px;
+
+}
+
+
+.category p{
+
+  color:
+    var(--soft);
+
+  font-size:13px;
+
+  line-height:1.6;
+
+}
+
+
+/* =====================================================
+   PRODUCTOS
+===================================================== */
+
+.products{
+
+  max-width:
+    1200px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:20px;
+
+}
+
+
+.product{
+
+  background:
+    rgba(255,255,255,.78);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius);
+
+  overflow:hidden;
+
+  box-shadow:
+    var(--shadow);
+
+  transition:.4s;
+
+  position:relative;
+
+}
+
+
+.product:hover{
+
+  transform:
+    translateY(-10px);
+
+  box-shadow:
+
+    0 28px 70px
+    rgba(60,40,50,.15);
+
+}
+
+
+.product-image{
+
+  height:
+    235px;
+
+  overflow:hidden;
+
+  background:
+    #f4e9ec;
+
+  position:relative;
+
+}
+
+
+.product-image::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(255,255,255,.55),
+      transparent 70%
+    );
+
+  transform:
+    translateX(-120%);
+
+  transition:
+    transform .7s;
+
+}
+
+
+.product:hover
+.product-image::after{
+
+  transform:
+    translateX(120%);
+
+}
+
+
+.product-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:
+    transform .6s ease;
+
+}
+
+
+.product:hover
+.product-image img{
+
+  transform:
+    scale(1.08)
+    rotate(1deg);
+
+}
+
+
+.product-info{
+
+  padding:
+    21px;
+
+}
+
+
+.product-type{
+
+  color:
+    var(--pink);
+
+  font-size:9px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+}
+
+
+.product h3{
+
+  margin:
+    8px 0;
+
+  font-size:18px;
+
+}
+
+
+.product p{
+
+  color:
+    var(--soft);
+
+  font-size:13px;
+
+  line-height:1.55;
+
+  margin-bottom:17px;
+
+}
+
+
+.product-bottom{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+}
+
+
+.price{
+
+  font-size:20px;
+
+  font-weight:900;
+
+}
+
+
+.product-button{
+
+  color:
+    var(--ink);
+
+  text-decoration:none;
+
+  background:
+    #fff0f5;
+
+  border:
+    1px solid
+    rgba(255,127,174,.2);
+
+  padding:
+    9px 13px;
+
+  border-radius:
+    11px;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  transition:.3s;
+
+}
+
+
+.product-button:hover{
+
+  background:
+    var(--pink);
+
+  color:white;
+
+}
+
+
+/* =====================================================
+   PRODUCTOS CREATIVOS
+===================================================== */
+
+.creative-strip{
+
+  max-width:
+    1200px;
+
+  margin:
+    60px auto 0;
+
+  display:grid;
+
+  grid-template-columns:
+    1.4fr 1fr 1fr;
+
+  gap:18px;
+
+}
+
+
+.creative-card{
+
+  min-height:
+    300px;
+
+  padding:
+    32px;
+
+  border-radius:
+    var(--radius);
+
+  position:relative;
+
+  overflow:hidden;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:flex-end;
+
+  border:
+    1px solid
+    rgba(41,37,42,.08);
+
+  transition:.4s;
+
+}
+
+
+.creative-card:hover{
+
+  transform:
+    translateY(-7px)
+    rotate(.5deg);
+
+}
+
+
+.creative-card:nth-child(1){
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd8e5,
+      #fff2f6
+    );
+
+}
+
+
+.creative-card:nth-child(2){
+
+  background:
+    linear-gradient(
+      135deg,
+      #ddd5ff,
+      #f6f3ff
+    );
+
+}
+
+
+.creative-card:nth-child(3){
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0b9,
+      #fffaf0
+    );
+
+}
+
+
+.creative-card .emoji{
+
+  position:absolute;
+
+  right:25px;
+  top:20px;
+
+  font-size:75px;
+
+  transform:
+    rotate(8deg);
+
+}
+
+
+.creative-card h3{
+
+  font-size:26px;
+
+  margin-bottom:8px;
+
+}
+
+
+.creative-card p{
+
+  max-width:
+    400px;
+
+  color:
+    #686168;
+
+  line-height:1.6;
+
+  font-size:13px;
+
+}
+
+
+/* =====================================================
+   PROMO
+===================================================== */
+
+.promo{
+
+  max-width:
+    1200px;
+
+  min-height:
+    330px;
+
+  margin:auto;
+
+  padding:
+    55px;
+
+  border-radius:
+    32px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      120deg,
+      #fff0f5,
+      #f0ecff,
+      #fff9dc
+    );
+
+  border:
+    1px solid
+    rgba(41,37,42,.08);
+
+  display:flex;
+
+  align-items:center;
+
+}
+
+
+.promo::before{
+
+  content:"✦  ✧  ★  ✦  ✧";
+
+  position:absolute;
+
+  right:-30px;
+
+  top:20px;
+
+  font-size:70px;
+
+  color:
+    rgba(255,127,174,.15);
+
+  transform:
+    rotate(15deg);
+
+}
+
+
+.promo-content{
+
+  max-width:
+    650px;
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+.promo small{
+
+  color:
+    var(--pink);
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:3px;
+
+}
+
+
+.promo h2{
+
+  font-size:
+    clamp(38px,5vw,65px);
+
+  line-height:1;
+
+  letter-spacing:-3px;
+
+  margin:
+    12px 0 17px;
+
+}
+
+
+.promo p{
+
+  color:
+    var(--soft);
+
+  line-height:1.7;
+
+  margin-bottom:25px;
+
+}
+
+
+/* =====================================================
+   SERVICIOS
+===================================================== */
+
+.services{
+
+  max-width:
+    1100px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:18px;
+
+}
+
+
+.service{
+
+  padding:
+    30px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    24px;
+
+  box-shadow:
+    0 15px 50px
+    rgba(60,40,50,.07);
+
+  transition:.35s;
+
+}
+
+
+.service:hover{
+
+  transform:
+    translateY(-7px);
+
+}
+
+
+.service-icon{
+
+  width:52px;
+  height:52px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:16px;
+
+  background:
+    #fff0f5;
+
+  font-size:25px;
+
+  margin-bottom:20px;
+
+}
+
+
+.service h3{
+
+  margin-bottom:9px;
+
+}
+
+
+.service p{
+
+  color:
+    var(--soft);
+
+  font-size:13px;
+
+  line-height:1.7;
+
+}
+
+
+/* =====================================================
+   SOBRE ALEJA
+===================================================== */
+
+.about{
+
+  max-width:
+    1100px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:65px;
+
+  align-items:center;
+
+}
+
+
+.about-image{
+
+  height:
+    470px;
+
+  border-radius:
+    32px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 25px 70px
+    rgba(60,40,50,.12);
+
+  border:
+    1px solid
+    var(--border);
+
+}
+
+
+.about-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  transition:
+    transform .7s ease;
+
+}
+
+
+.about-image:hover img{
+
+  transform:
+    scale(1.06);
+
+}
+
+
+.about-content h2{
+
+  font-size:
+    clamp(40px,5vw,65px);
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+
+  margin:
+    10px 0 22px;
+
+}
+
+
+.about-content p{
+
+  color:
+    var(--soft);
+
+  line-height:1.8;
+
+  margin-bottom:16px;
+
+}
+
+
+.about-points{
+
+  display:grid;
+
+  gap:11px;
+
+  margin-top:25px;
+
+}
+
+
+.about-point{
+
+  padding:
+    15px;
+
+  border-radius:
+    14px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  border:
+    1px solid
+    var(--border);
+
+  font-size:13px;
+
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+
+  min-height:
+    600px;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  text-align:center;
+
+}
+
+
+.final-content{
+
+  max-width:
+    850px;
+
+}
+
+
+.final-sticker{
+
+  display:inline-block;
+
+  padding:
+    10px 15px;
+
+  background:
+    var(--yellow);
+
+  border-radius:
+    8px;
+
+  font-size:11px;
+
+  font-weight:900;
+
+  transform:
+    rotate(-3deg);
+
+  margin-bottom:25px;
+
+  box-shadow:
+    4px 5px 0
+    rgba(41,37,42,.08);
+
+}
+
+
+.final h2{
+
+  font-size:
+    clamp(45px,7vw,85px);
+
+  line-height:.95;
+
+  letter-spacing:-5px;
+
+  margin-bottom:25px;
+
+}
+
+
+.final h2 span{
+
+  color:
+    var(--pink);
+
+}
+
+
+.final p{
+
+  max-width:
+    600px;
+
+  margin:auto;
+
+  color:
+    var(--soft);
+
+  line-height:1.7;
+
+  font-size:17px;
+
+  margin-bottom:30px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+  padding:
+    35px 6%;
+
+  border-top:
+    1px solid
+    rgba(41,37,42,.08);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.footer-logo{
+
+  font-weight:900;
+
+  letter-spacing:1px;
+
+}
+
+
+footer p{
+
+  color:
+    #8b8389;
+
+  font-size:11px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:950px){
+
+  .nav-links{
+    display:none;
+  }
+
+
+  .categories{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .products{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .services{
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+
+  .creative-strip{
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+
+  .creative-card:first-child{
+
+    grid-column:
+      1 / -1;
+
+  }
+
+}
+
+
+@media(max-width:650px){
+
+  nav{
+
+    width:94%;
+
+    height:62px;
+
+  }
+
+
+  .logo{
+
+    font-size:11px;
+
+  }
+
+
+  .logo-icon{
+
+    width:34px;
+    height:34px;
+
+  }
+
+
+  .nav-button{
+
+    padding:
+      9px 12px;
+
+    font-size:9px;
+
+  }
+
+
+  .hero{
+
+    padding-top:
+      135px;
+
+  }
+
+
+  .hero h1{
+
+    letter-spacing:-4px;
+
+  }
+
+
+  .hero-description{
+
+    font-size:15px;
+
+  }
+
+
+  section{
+
+    padding:
+      80px 5%;
+
+  }
+
+
+  .categories,
+  .products,
+  .services,
+  .creative-strip{
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .creative-card:first-child{
+
+    grid-column:auto;
+
+  }
+
+
+  .promo{
+
+    padding:
+      35px 25px;
+
+    min-height:
+      400px;
+
+  }
+
+
+  .about{
+
+    grid-template-columns:
+      1fr;
+
+    gap:35px;
+
+  }
+
+
+  .about-image{
+
+    height:
+      330px;
+
+  }
+
+
+  footer{
+
+    justify-content:center;
+
+    text-align:center;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     FONDO
+===================================================== -->
+
+<div class="paper-background">
+
+  <div class="blob blob-pink"></div>
+
+  <div class="blob blob-purple"></div>
+
+  <div class="blob blob-yellow"></div>
+
+  <div class="blob blob-blue"></div>
+
+  <div class="confetti"></div>
+
+</div>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+
+  <a href="#inicio" class="logo">
+
+    <span class="logo-icon">
+      ✿
+    </span>
+
+    PAPELERÍA ALEJA
+
+  </a>
+
+
+  <div class="nav-links">
+
+    <a href="#productos">
+      Productos
+    </a>
+
+    <a href="#personalizados">
+      Personalizados
+    </a>
+
+    <a href="#servicios">
+      Servicios
+    </a>
+
+    <a href="#nosotros">
+      Nosotros
+    </a>
+
+  </div>
+
+
+  <a
+    href="#productos"
+    class="nav-button">
+
+    VER TODO
+
+  </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+  class="hero"
+  id="inicio">
+
+
+  <div class="hero-content">
+
+
+    <div class="small-label">
+
+      <span></span>
+
+      PAPELERÍA · DETALLES · CREATIVIDAD
+
+    </div>
+
+
+    <h1>
+
+      <span class="line-one">
+        Cositas que
+      </span>
+
+      <span class="line-two">
+        hacen especial
+      </span>
+
+    </h1>
+
+
+    <p class="hero-description">
+
+      Bienvenido a
+      <strong>Papelería Aleja</strong>,
+      un espacio lleno de color,
+      creatividad y detalles hechos
+      para darle un toque especial
+      a tus días.
+
+    </p>
+
+
+    <div class="hero-buttons">
+
+      <a
+        href="#productos"
+        class="btn btn-main">
+
+        ✿ VER PRODUCTOS
+
+      </a>
+
+
+      <a
+        href="#personalizados"
+        class="btn btn-secondary">
+
+        ✦ QUIERO ALGO PERSONALIZADO
+
+      </a>
+
+    </div>
+
+
+    <div class="hero-info">
+
+      <span>🎀 Personalizados</span>
+
+      <i></i>
+
+      <span>📒 Papelería</span>
+
+      <i></i>
+
+      <span>📌 Pines</span>
+
+      <i></i>
+
+      <span>🎁 Detalles</span>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORÍAS
+===================================================== -->
+
+<section id="categorias">
+
+  <div class="section-head">
+
+    <div class="section-tag">
+      EXPLORA
+    </div>
+
+    <h2>
+      Un poquito de todo.
+    </h2>
+
+    <p>
+      Cosas bonitas, útiles y
+      personalizadas para regalar,
+      estudiar o simplemente darte
+      un gusto.
+    </p>
+
+  </div>
+
+
+  <div class="categories">
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        📒
+      </div>
+
+      <h3>
+        Papelería bonita
+      </h3>
+
+      <p>
+        Libretas, notas, plumas,
+        stickers y mucho más.
+      </p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        📌
+      </div>
+
+      <h3>
+        Pines
+      </h3>
+
+      <p>
+        Pines personalizados para
+        llevar tus ideas contigo.
+      </p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        🎀
+      </div>
+
+      <h3>
+        Personalizados
+      </h3>
+
+      <p>
+        Diseños hechos especialmente
+        para ti o para alguien especial.
+      </p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="category-icon">
+        🎁
+      </div>
+
+      <h3>
+        Detalles
+      </h3>
+
+      <p>
+        Regalos pequeños que pueden
+        convertirse en grandes recuerdos.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUCTOS
+===================================================== -->
+
+<section id="productos">
+
+  <div class="section-head">
+
+    <div class="section-tag">
+      PRODUCTOS FAVORITOS
+    </div>
+
+    <h2>
+      Cosas que dan ganas
+      de llevárselas todas.
+    </h2>
+
+    <p>
+      Algunos de los productos que
+      puedes encontrar en Papelería Aleja.
+    </p>
+
+  </div>
+
+
+  <div class="products">
+
+
+    <!-- PRODUCTO 1 -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80"
+          alt="Libreta personalizada">
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div class="product-type">
+          PAPELERÍA
+        </div>
+
+        <h3>
+          Libreta personalizada
+        </h3>
+
+        <p>
+          Una libreta hecha para
+          tus apuntes, ideas y proyectos.
+        </p>
+
+
+        <div class="product-bottom">
+
+          <span class="price">
+            $89
+          </span>
+
+          <a
+            href="#personalizados"
+            class="product-button">
+
+            VER
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUCTO 2 -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=80"
+          alt="Stickers">
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div class="product-type">
+          STICKERS
+        </div>
+
+        <h3>
+          Stickers
+        </h3>
+
+        <p>
+          Dale personalidad a tus
+          libretas, carpetas y accesorios.
+        </p>
+
+
+        <div class="product-bottom">
+
+          <span class="price">
+            $35
+          </span>
+
+          <a
+            href="#personalizados"
+            class="product-button">
+
+            VER
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUCTO 3 -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1582561833407-b95380302e9d?auto=format&fit=crop&w=900&q=80"
+          alt="Pines personalizados">
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div class="product-type">
+          PERSONALIZADO
+        </div>
+
+        <h3>
+          Pines personalizados
+        </h3>
+
+        <p>
+          Convierte una imagen,
+          personaje o idea en un pin.
+        </p>
+
+
+        <div class="product-bottom">
+
+          <span class="price">
+            $45
+          </span>
+
+          <a
+            href="#personalizados"
+            class="product-button">
+
+            CREAR
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+
+    <!-- PRODUCTO 4 -->
+
+    <article class="product">
+
+      <div class="product-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=900&q=80"
+          alt="Material de papelería">
+
+      </div>
+
+
+      <div class="product-info">
+
+        <div class="product-type">
+          ESCRITURA
+        </div>
+
+        <h3>
+          Plumas bonitas
+        </h3>
+
+        <p>
+          Para escribir tus tareas,
+          apuntes o simplemente porque sí.
+        </p>
+
+
+        <div class="product-bottom">
+
+          <span class="price">
+            $25
+          </span>
+
+          <a
+            href="#personalizados"
+            class="product-button">
+
+            VER
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PERSONALIZADOS
+===================================================== -->
+
+<section id="personalizados">
+
+  <div class="section-head">
+
+    <div class="section-tag">
+      HECHO PARA TI
+    </div>
+
+    <h2>
+      Aquí tus ideas
+      pueden convertirse
+      en cosas reales.
+    </h2>
+
+    <p>
+      Personaliza detalles, crea diseños
+      y convierte algo que imaginaste
+      en un producto que puedas tener
+      en tus manos.
+    </p>
+
+  </div>
+
+
+  <div class="creative-strip">
+
+
+    <div class="creative-card">
+
+      <div class="emoji">
+        📌
+      </div>
+
+      <h3>
+        Pines personalizados
+      </h3>
+
+      <p>
+        Elige tu diseño, personaje,
+        frase o imagen favorita y
+        conviértela en un pequeño
+        detalle para llevar contigo.
+      </p>
+
+    </div>
+
+
+    <div class="creative-card">
+
+      <div class="emoji">
+        🎀
+      </div>
+
+      <h3>
+        Diseños
+      </h3>
+
+      <p>
+        Creamos detalles pensados
+        para cada ocasión.
+      </p>
+
+    </div>
+
+
+    <div class="creative-card">
+
+      <div class="emoji">
+        💌
+      </div>
+
+      <h3>
+        Detalles
+      </h3>
+
+      <p>
+        Pequeños regalos para
+        personas especiales.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROMOCIÓN
+===================================================== -->
+
+<section>
+
+  <div class="promo">
+
+    <div class="promo-content">
+
+      <small>
+        UNA IDEA + UN POQUITO DE CREATIVIDAD
+      </small>
+
+      <h2>
+        Hazlo tuyo.
+      </h2>
+
+      <p>
+        Desde un pin personalizado hasta
+        una libreta diseñada especialmente
+        para ti. Cuéntanos tu idea y
+        empezamos a crear.
+      </p>
+
+      <a
+        href="#personalizados"
+        class="btn btn-main">
+
+        ✦ VER PERSONALIZADOS
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICIOS
+===================================================== -->
+
+<section id="servicios">
+
+  <div class="section-head">
+
+    <div class="section-tag">
+      TAMBIÉN HACEMOS
+    </div>
+
+    <h2>
+      Más que una papelería.
+    </h2>
+
+    <p>
+      Diferentes servicios para ayudarte
+      con tus trabajos, regalos e ideas.
+    </p>
+
+  </div>
+
+
+  <div class="services">
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🖨️
+      </div>
+
+      <h3>
+        Impresiones
+      </h3>
+
+      <p>
+        Imprime tareas, documentos,
+        imágenes y proyectos.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        📄
+      </div>
+
+      <h3>
+        Copias
+      </h3>
+
+      <p>
+        Copias rápidas para escuela,
+        trabajo y proyectos.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🎨
+      </div>
+
+      <h3>
+        Diseños
+      </h3>
+
+      <p>
+        Diseños para productos,
+        detalles y proyectos.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        📌
+      </div>
+
+      <h3>
+        Pines personalizados
+      </h3>
+
+      <p>
+        Convierte tus ideas e imágenes
+        favoritas en pines.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        🎁
+      </div>
+
+      <h3>
+        Regalos
+      </h3>
+
+      <p>
+        Detalles preparados para
+        sorprender a alguien.
+      </p>
+
+    </div>
+
+
+    <div class="service">
+
+      <div class="service-icon">
+        ✂️
+      </div>
+
+      <h3>
+        Manualidades
+      </h3>
+
+      <p>
+        Materiales y productos para
+        tus proyectos creativos.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOBRE PAPELERÍA ALEJA
+===================================================== -->
+
+<section id="nosotros">
+
+  <div class="about">
+
+
+    <div class="about-image">
+
+      <img
+        src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80"
+        alt="Papelería creativa">
+
+    </div>
+
+
+    <div class="about-content">
+
+      <div class="section-tag">
+        PAPELERÍA ALEJA
+      </div>
+
+      <h2>
+        Hecho con
+        creatividad.
+      </h2>
+
+      <p>
+        Papelería Aleja es un espacio
+        para quienes disfrutan de las
+        cosas bonitas, los detalles
+        personalizados y crear algo
+        diferente.
+      </p>
+
+      <p>
+        Aquí cada producto puede tener
+        un poquito de tu personalidad.
+      </p>
+
+
+      <div class="about-points">
+
+        <div class="about-point">
+          🎀 Detalles personalizados
+        </div>
+
+        <div class="about-point">
+          📌 Pines hechos para ti
+        </div>
+
+        <div class="about-point">
+          ✨ Ideas convertidas en productos
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+  <div class="final-content">
+
+    <div class="final-sticker">
+      HECHO CON MUCHO CARIÑO ✿
+    </div>
+
+    <h2>
+      Tu próxima idea
+      puede empezar
+      <span>aquí.</span>
+    </h2>
+
+    <p>
+      Papelería, personalizados,
+      detalles y pequeñas cosas
+      que hacen bonito lo cotidiano.
+    </p>
+
+    <a
+      href="#productos"
+      class="btn btn-main">
+
+      ✦ EXPLORAR PAPELERÍA
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div class="footer-logo">
+    PAPELERÍA ALEJA ✿
+  </div>
+
+  <p>
+    Papelería · Personalizados · Detalles
+  </p>
+
+  <p>
+    © 2026 Papelería Aleja
+  </p>
+
+</footer>
+
+<script>
+/* =========================================================
+   PAPELERÍA ALEJA — PARTE 2
+   Interacciones, ondas, stickers, brillo y movimiento
+   ========================================================= */
+
+const body = document.body;
+
+/* ---------- 1. ONDAS DE PAPEL / ACUARELA ---------- */
+
+function crearOnda(x, y) {
+  const onda = document.createElement("div");
+  onda.className = "paper-wave";
+
+  onda.style.left = x + "px";
+  onda.style.top = y + "px";
+
+  const colores = [
+    "rgba(255,127,174,.38)",
+    "rgba(168,140,255,.34)",
+    "rgba(255,216,107,.38)",
+    "rgba(142,229,202,.36)",
+    "rgba(127,200,255,.34)"
+  ];
+
+  onda.style.borderColor =
+    colores[Math.floor(Math.random() * colores.length)];
+
+  document.body.appendChild(onda);
+
+  setTimeout(() => onda.remove(), 900);
+}
+
+document.addEventListener("click", e => {
+  crearOnda(e.clientX, e.clientY);
+});
+
+document.addEventListener("touchstart", e => {
+  const touch = e.touches[0];
+  if (touch) crearOnda(touch.clientX, touch.clientY);
+}, {passive:true});
+
+
+/* ---------- 2. MINI STICKERS AL TOCAR ---------- */
+
+const stickers = [
+  "✿",
+  "♡",
+  "✦",
+  "✧",
+  "🎀",
+  "📎",
+  "✏️",
+  "⭐",
+  "🌸",
+  "🦋",
+  "📌"
+];
+
+function crearSticker(x, y) {
+  const sticker = document.createElement("div");
+  sticker.className = "mini-sticker";
+
+  sticker.textContent =
+    stickers[Math.floor(Math.random() * stickers.length)];
+
+  sticker.style.left = x + "px";
+  sticker.style.top = y + "px";
+
+  sticker.style.setProperty(
+    "--rot",
+    (Math.random() * 40 - 20) + "deg"
+  );
+
+  document.body.appendChild(sticker);
+
+  setTimeout(() => sticker.remove(), 1200);
+}
+
+document.addEventListener("click", e => {
+  for(let i = 0; i < 2; i++){
+    setTimeout(() => {
+      crearSticker(
+        e.clientX + Math.random() * 35 - 17,
+        e.clientY + Math.random() * 35 - 17
+      );
+    }, i * 80);
+  }
+});
+
+
+/* ---------- 3. BRILLITOS QUE SIGUEN AL CURSOR ---------- */
+
+let ultimaEstela = 0;
+
+document.addEventListener("mousemove", e => {
+  const ahora = Date.now();
+
+  if(ahora - ultimaEstela < 45) return;
+  ultimaEstela = ahora;
+
+  const brillo = document.createElement("span");
+  brillo.className = "cursor-spark";
+
+  brillo.textContent =
+    Math.random() > .5 ? "✦" : "·";
+
+  brillo.style.left = e.clientX + "px";
+  brillo.style.top = e.clientY + "px";
+
+  document.body.appendChild(brillo);
+
+  setTimeout(() => brillo.remove(), 600);
+});
+
+
+/* ---------- 4. TEXTO CAMBIANTE ---------- */
+
+const textosAleja = [
+  "Cositas que hacen especial",
+  "Ideas que se vuelven detalles",
+  "Papelería hecha con cariño",
+  "Detalles que hablan de ti",
+  "Tu creatividad también se puede guardar",
+  "Pequeñas cosas, grandes ideas"
+];
+
+const titulo = document.querySelector(".hero h1");
+
+if(titulo){
+
+  let indiceTexto = 0;
+
+  setInterval(() => {
+
+    titulo.style.opacity = "0";
+    titulo.style.transform = "translateY(8px)";
+
+    setTimeout(() => {
+
+      indiceTexto =
+        (indiceTexto + 1) % textosAleja.length;
+
+      const partes =
+        textosAleja[indiceTexto].split(" ");
+
+      const mitad =
+        Math.ceil(partes.length / 2);
+
+      titulo.innerHTML =
+        partes.slice(0, mitad).join(" ") +
+        "<br>" +
+        '<span class="pink-text">' +
+        partes.slice(mitad).join(" ") +
+        "</span>";
+
+      titulo.style.opacity = "1";
+      titulo.style.transform = "translateY(0)";
+
+    }, 350);
+
+  }, 4200);
+}
+
+
+/* ---------- 5. CARDS CON MOVIMIENTO ---------- */
+
+const cards = document.querySelectorAll(
+  ".product-card, .category-card, .service-card, .custom-card"
+);
+
+cards.forEach(card => {
+
+  card.addEventListener("mousemove", e => {
+
+    const rect = card.getBoundingClientRect();
+
+    const x =
+      e.clientX - rect.left;
+
+    const y =
+      e.clientY - rect.top;
+
+    const rotY =
+      ((x / rect.width) - .5) * 8;
+
+    const rotX =
+      ((y / rect.height) - .5) * -8;
+
+    card.style.transform =
+      `perspective(900px)
+       rotateX(${rotX}deg)
+       rotateY(${rotY}deg)
+       translateY(-7px)`;
+
+  });
+
+  card.addEventListener("mouseleave", () => {
+    card.style.transform =
+      "perspective(900px) rotateX(0) rotateY(0) translateY(0)";
+  });
+
+});
+
+
+/* ---------- 6. BRILLO METÁLICO PARA PINES ---------- */
+
+document.querySelectorAll("img").forEach(img => {
+
+  img.addEventListener("mousemove", e => {
+
+    const rect = img.getBoundingClientRect();
+
+    const x =
+      ((e.clientX - rect.left) / rect.width) * 100;
+
+    img.style.setProperty("--shine-x", x + "%");
+
+  });
+
+});
+
+
+/* ---------- 7. FONDO VIVO ---------- */
+
+let fondo = 0;
+
+setInterval(() => {
+
+  fondo += .35;
+
+  const blobs =
+    document.querySelectorAll(".blob");
+
+  blobs.forEach((blob, i) => {
+
+    const movimiento =
+      Math.sin((fondo + i * 80) * .018) * 25;
+
+    const movimiento2 =
+      Math.cos((fondo + i * 50) * .015) * 20;
+
+    blob.style.transform =
+      `translate(${movimiento}px, ${movimiento2}px)`;
+
+  });
+
+}, 40);
+
+
+/* ---------- 8. BOTONES CON ONDA ---------- */
+
+document.querySelectorAll("button, .btn").forEach(btn => {
+
+  btn.addEventListener("click", e => {
+
+    const rect = btn.getBoundingClientRect();
+
+    const ripple =
+      document.createElement("span");
+
+    ripple.className = "button-ripple";
+
+    ripple.style.left =
+      (e.clientX - rect.left) + "px";
+
+    ripple.style.top =
+      (e.clientY - rect.top) + "px";
+
+    btn.appendChild(ripple);
+
+    setTimeout(() => ripple.remove(), 700);
+
+  });
+
+});
+
+
+/* ---------- 9. REVELAR SECCIONES AL HACER SCROLL ---------- */
+
+const elementos =
+  document.querySelectorAll(
+    "section, .product-card, .category-card, .service-card"
+  );
+
+const observer =
+  new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
+
+        observer.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, {
+    threshold: .12
+  });
+
+elementos.forEach(el => {
+
+  el.classList.add("scroll-reveal");
+
+  observer.observe(el);
+
+});
+
+
+/* ---------- 10. MENSAJE FLOTANTE ---------- */
+
+const mensajes = [
+  "✨ Una idea puede convertirse en un detalle.",
+  "🎀 Aquí cada cosita tiene personalidad.",
+  "📌 ¿Y si hacemos algo personalizado?",
+  "✿ Pequeños detalles que cuentan historias.",
+  "🖍️ Tu imaginación también tiene papelería.",
+  "🎁 Siempre hay espacio para algo bonito."
+];
+
+let mensajeActual = 0;
+
+function mostrarMensaje(){
+
+  const aviso =
+    document.createElement("div");
+
+  aviso.className = "aleja-message";
+
+  aviso.textContent =
+    mensajes[mensajeActual];
+
+  mensajeActual =
+    (mensajeActual + 1) % mensajes.length;
+
+  document.body.appendChild(aviso);
+
+  setTimeout(() => {
+    aviso.classList.add("hide");
+  }, 2500);
+
+  setTimeout(() => {
+    aviso.remove();
+  }, 3100);
+}
+
+setTimeout(mostrarMensaje, 1800);
+
+setInterval(mostrarMensaje, 9000);
+
+
+/* ---------- 11. SOPORTE PARA MÓVIL ---------- */
+
+document.addEventListener("touchmove", e => {
+
+  const touch = e.touches[0];
+
+  if(!touch) return;
+
+  if(Math.random() > .82){
+
+    crearSticker(
+      touch.clientX,
+      touch.clientY
+    );
+
+  }
+
+}, {passive:true});
+
+
+/* ---------- 12. REDUCIR EFECTOS SI EL USUARIO
+             PREFIERE MENOS ANIMACIÓN ---------- */
+
+if(
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches
+){
+
+  document.documentElement.style.setProperty(
+    "scroll-behavior",
+    "auto"
+  );
+
+}
+</script>
+
+
+<style>
+
+/* =========================================================
+   ESTILOS DE LAS INTERACCIONES
+   ========================================================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+
+/* ---------- ONDA ---------- */
+
+.paper-wave{
+  position:fixed;
+  width:25px;
+  height:25px;
+
+  border:3px solid rgba(255,127,174,.4);
+  border-radius:50%;
+
+  transform:
+    translate(-50%,-50%)
+    scale(.2);
+
+  pointer-events:none;
+  z-index:9999;
+
+  animation:
+    paperWave .9s cubic-bezier(.2,.7,.2,1) forwards;
+}
+
+@keyframes paperWave{
+
+  0%{
+    opacity:.8;
+    transform:
+      translate(-50%,-50%)
+      scale(.2);
+  }
+
+  100%{
+    opacity:0;
+    transform:
+      translate(-50%,-50%)
+      scale(8);
+  }
+
+}
+
+
+/* ---------- STICKERS ---------- */
+
+.mini-sticker{
+  position:fixed;
+
+  font-size:24px;
+
+  pointer-events:none;
+
+  z-index:10000;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(var(--rot))
+    scale(.4);
+
+  animation:
+    stickerFly 1.2s cubic-bezier(.15,.8,.25,1) forwards;
+}
+
+@keyframes stickerFly{
+
+  0%{
+    opacity:0;
+    transform:
+      translate(-50%,-50%)
+      rotate(var(--rot))
+      scale(.3);
+  }
+
+  15%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+
+    transform:
+      translate(
+        calc(-50% + 20px),
+        calc(-50% - 70px)
+      )
+      rotate(
+        calc(var(--rot) + 35deg)
+      )
+      scale(1.15);
+  }
+
+}
+
+
+/* ---------- BRILLO DEL CURSOR ---------- */
+
+.cursor-spark{
+  position:fixed;
+
+  pointer-events:none;
+
+  z-index:9998;
+
+  font-size:13px;
+
+  color:#ff7fae;
+
+  animation:
+    sparkle .6s ease-out forwards;
+}
+
+@keyframes sparkle{
+
+  0%{
+    opacity:0;
+    transform:scale(.3);
+  }
+
+  35%{
+    opacity:1;
+    transform:scale(1);
+  }
+
+  100%{
+    opacity:0;
+    transform:
+      translateY(-18px)
+      scale(.2);
+  }
+
+}
+
+
+/* ---------- TITULO ---------- */
+
+.hero h1{
+  transition:
+    opacity .35s ease,
+    transform .35s ease;
+}
+
+.pink-text{
+  color:#ff7fae;
+}
+
+
+/* ---------- CARDS ---------- */
+
+.product-card,
+.category-card,
+.service-card,
+.custom-card{
+
+  transition:
+    transform .18s ease,
+    box-shadow .25s ease;
+
+  transform-style:preserve-3d;
+
+}
+
+.product-card:hover,
+.category-card:hover,
+.service-card:hover,
+.custom-card:hover{
+
+  box-shadow:
+    0 28px 70px rgba(60,40,50,.16);
+
+}
+
+
+/* ---------- BRILLO DE IMÁGENES ---------- */
+
+.product-card img,
+.category-card img{
+
+  position:relative;
+
+  transition:
+    transform .35s ease,
+    filter .35s ease;
+
+}
+
+.product-card:hover img{
+
+  transform:scale(1.035);
+
+  filter:
+    brightness(1.05)
+    saturate(1.08);
+}
+
+
+/* ---------- EFECTO DE BRILLO SOBRE PINES ---------- */
+
+.product-card:nth-child(3){
+  position:relative;
+  overflow:hidden;
+}
+
+.product-card:nth-child(3)::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:55%;
+  height:180%;
+
+  top:-40%;
+  left:-80%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.55),
+      transparent
+    );
+
+  transform:rotate(18deg);
+
+  pointer-events:none;
+
+  transition:left .8s ease;
+}
+
+.product-card:nth-child(3):hover::after{
+  left:130%;
+}
+
+
+/* ---------- BOTONES ---------- */
+
+button,
+.btn{
+  position:relative;
+  overflow:hidden;
+}
+
+.button-ripple{
+
+  position:absolute;
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.6);
+
+  transform:
+    translate(-50%,-50%)
+    scale(0);
+
+  pointer-events:none;
+
+  animation:
+    buttonRipple .7s ease-out forwards;
+}
+
+@keyframes buttonRipple{
+
+  to{
+    transform:
+      translate(-50%,-50%)
+      scale(18);
+
+    opacity:0;
+  }
+
+}
+
+
+/* ---------- SCROLL ---------- */
+
+.scroll-reveal{
+
+  opacity:0;
+
+  transform:
+    translateY(35px)
+    scale(.98);
+
+  transition:
+    opacity .7s ease,
+    transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.scroll-reveal.show{
+
+  opacity:1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* ---------- MENSAJE FLOTANTE ---------- */
+
+.aleja-message{
+
+  position:fixed;
+
+  left:50%;
+  bottom:28px;
+
+  transform:
+    translateX(-50%)
+    translateY(25px);
+
+  background:
+    rgba(255,253,248,.94);
+
+  border:
+    1px solid rgba(41,37,42,.10);
+
+  padding:
+    13px 20px;
+
+  border-radius:999px;
+
+  box-shadow:
+    0 18px 50px rgba(60,40,50,.16);
+
+  backdrop-filter:blur(12px);
+
+  font-size:14px;
+  font-weight:700;
+
+  color:#29252a;
+
+  z-index:10001;
+
+  animation:
+    messageIn .55s ease forwards;
+}
+
+.aleja-message.hide{
+
+  animation:
+    messageOut .6s ease forwards;
+}
+
+@keyframes messageIn{
+
+  to{
+    opacity:1;
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+}
+
+@keyframes messageOut{
+
+  to{
+    opacity:0;
+    transform:
+      translateX(-50%)
+      translateY(25px);
+  }
+
+}
+
+
+/* ---------- MOVIMIENTO DEL FONDO ---------- */
+
+.blob{
+  transition:
+    transform 1.5s ease-out;
+}
+
+
+/* ---------- MÓVIL ---------- */
+
+@media(max-width:650px){
+
+  .paper-wave{
+    animation-duration:.75s;
+  }
+
+  .mini-sticker{
+    font-size:20px;
+  }
+
+  .aleja-message{
+
+    width:
+      calc(100% - 36px);
+
+    text-align:center;
+
+    font-size:13px;
+
+    bottom:18px;
+
+  }
+
+}
+
+</style>
+
+</body>
+
+</html>
